@@ -137,11 +137,11 @@ public class gearCalcFrame extends JFrame {
 	enum bladeMaterial {WOOD,IRON,DIAMOND;}
 	enum gripMaterial {STICK,LEATHER,WOOL;}
 	static double[] woodProp = {4,0.9,200};
-    static double[] ironProp = {6,0.9,800};
-    static double[] diamondProp = {8,0.9,3000};
-    static double[] woolProp = {1.1,0.9,1.1};
-    static double[] leatherProp = {1.25,1.1,1.0};
-    static double[] stickProp = {0.9,1.25,1.0};
+    	static double[] ironProp = {6,0.9,800};
+    	static double[] diamondProp = {8,0.9,3000};
+    	static double[] woolProp = {1.1,0.9,1.1};
+   	static double[] leatherProp = {1.25,1.1,1.0};
+    	static double[] stickProp = {0.9,1.25,1.0};
 	//GUI Private Vars
 	private static JButton calculateButton;
 	private JLabel dmgOutputLabel;
@@ -349,6 +349,8 @@ public class gearCalcFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//I tried to staying away... but I had no choice... 
 				//Switch Casing for each input and correlating to materials
+				//TODO: Create transactional var interface for materials so they're added and binded 
+				//to an array for modular switch case use
 				switch (bladeMaterials_1.getSelectedIndex()) {
 		        case 0: bladeMICA1 = woodProp;
 		            break;
@@ -398,27 +400,27 @@ public class gearCalcFrame extends JFrame {
 		            break;
 		    }
 		        switch (gripMaterials_1.getSelectedIndex()) {
-		        case 0: gripMICA1 = woodProp;
+		        case 0: gripMICA1 = stickProp;
 		            break;
-		        case 1: gripMICA1 = ironProp;
+		        case 1: gripMICA1 = leatherProp;
 		            break;
-		        case 2: gripMICA1 = diamondProp;
+		        case 2: gripMICA1 = woolProp;
 		            break;
 		    }
 		        switch (gripMaterials_2.getSelectedIndex()) {
-		        case 0: gripMICA2 = woodProp;
+		        case 0: gripMICA2 = stickProp;
 		            break;
-		        case 1: gripMICA2 = ironProp;
+		        case 1: gripMICA2 = leatherProp;
 		            break;
-		        case 2: gripMICA2 = diamondProp;
+		        case 2: gripMICA2 = woolProp;
 		            break;
 		    }
 		        switch (gripMaterials_3.getSelectedIndex()) {
-		        case 0: gripMICA3 = woodProp;
+		        case 0: gripMICA3 = stickProp;
 		            break;
-		        case 1: gripMICA3 = ironProp;
+		        case 1: gripMICA3 = leatherProp;
 		            break;
-		        case 2: gripMICA3 = diamondProp;
+		        case 2: gripMICA3 = woolProp;
 		            break;
 		    }
 		        /*
